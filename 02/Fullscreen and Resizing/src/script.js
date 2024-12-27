@@ -22,9 +22,21 @@ scene.add(mesh)
  * Sizes
  */
 const sizes = {
-    width: 800,
-    height: 600
+    width: window.innerWidth,
+    height: window.innerHeight
 }
+
+window.addEventListener('resize', ()=> {
+    // console.log('window has been resized');
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+
+    //update Camera
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
+
+    renderer.setSize(sizes.width, sizes.height)
+})
 
 /**
  * Camera
@@ -36,6 +48,7 @@ scene.add(camera)
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
+// controls.enabled =false
 controls.enableDamping = true
 
 /**
