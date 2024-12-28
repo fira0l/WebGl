@@ -45,7 +45,7 @@ Ensure you have the following installed:
 
 1. Clone the repository:  
 ```bash
-   git clone <repo-url>
+   git clone https://www.github.com/fira0l/webgl.git
 ```
 
 2.Navigate to the project directory:
@@ -71,7 +71,7 @@ Here you list all prerequisites necessary for running your project. For example:
 How to clone your project
 
 ```bash
-git clone https://www.github.com/fira0l/webgl
+git clone https://www.github.com/fira0l/webgl.git
 ```
 
 <h3>Starting</h3>
