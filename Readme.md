@@ -96,7 +96,7 @@ npm run dev
 
 <td align="center">
 <a href="https://github.com/fira0l">
-<img src="" width="100px;" alt="Firaol Anbessa Profile Picture"/><br>
+<img src="https://drive.google.com/file/d/1BNLBNP_DwuC16fsnc6qF0GKAlKSV41dV/view?usp=drive_link" width="100px;" alt="Firaol Anbessa Profile Picture"/><br>
 <sub>
 <b>Firaol Anbessa</b>
 </sub>
