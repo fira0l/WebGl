@@ -20,8 +20,8 @@
 
 <p align="center">
 
-<img src="https://github.com/fira0l/WebGl/blob/master/images/three.webp" alt="Random Image" width="400px" height="400px">
-<img src="https://github.com/fira0l/WebGl/blob/master/images/webgl.webp" alt="Random Image" width="400px" height="400px">
+<img src="https://github.com/fira0l/WebGl/blob/master/images/three.webp" alt="Random Image" width="400px" height="300px">
+<img src="https://github.com/fira0l/WebGl/blob/master/images/webgl.webp" alt="Random Image" width="400px" height="300px">
 </p>
 
 <h2 id="technologies">💻 Technologies</h2>
