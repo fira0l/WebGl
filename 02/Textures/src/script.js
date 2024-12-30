@@ -5,6 +5,18 @@ import * as dat from 'lil-gui'
 
 
 /**
+ * Textures
+ */
+const image = new Image()
+const texture = new THREE.Texture(image)
+
+image.onload = ()=>{
+    texture.needsUpdate = true
+}
+
+image.src = '/textures/door/color.jpg'
+
+/**
  * Base
  */
 // Canvas
@@ -23,11 +35,11 @@ const parameters = {
  * Object
  */
 const geometry = new THREE.BoxGeometry(1, 1, 1)
-const material = new THREE.MeshBasicMaterial({ color: parameters.color })
+const material = new THREE.MeshBasicMaterial({ map: texture })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 
-gui.addColor(material,'color')
+// gui.addColor(material,'color')
 gui.add(mesh.position,'y').name('elevation').min(-3).max(3).step(0.01)
 gui.add(mesh.position,'x').name('x-distance').min(-3).max(3).step(0.01)
 gui.add(mesh.position,'z').name('closeness').min(-3).max(3).step(0.01)
