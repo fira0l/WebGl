@@ -3,6 +3,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import gsap from 'gsap'
 import * as dat from 'lil-gui'
 
+
 /**
  * Base
  */
@@ -30,6 +31,7 @@ gui.addColor(material,'color')
 gui.add(mesh.position,'y').name('elevation').min(-3).max(3).step(0.01)
 gui.add(mesh.position,'x').name('x-distance').min(-3).max(3).step(0.01)
 gui.add(mesh.position,'z').name('closeness').min(-3).max(3).step(0.01)
+// gui.add(camera,'x').name('Camera Rotation').min(-3).max(3).step(0.01)
 gui.add(material,'wireframe')
 
 /**
