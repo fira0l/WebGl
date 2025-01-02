@@ -29,7 +29,7 @@ const scene = new THREE.Scene();
  */
 
 const material = new THREE.MeshBasicMaterial();
-// material.map = doorColorTexture
+material.map = doorColorTexture
 material.color = new THREE.Color('#ff00ff')
 
 
