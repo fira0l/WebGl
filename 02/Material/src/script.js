@@ -39,9 +39,12 @@ const scene = new THREE.Scene();
 // material.side = THREE.DoubleSide
 
 
-const material = new THREE.MeshNormalMaterial()
+// const material = new THREE.MeshNormalMaterial()
 // material.wireframe = true
-material.flatShading = true
+// material.flatShading = true
+
+const material = new THREE.MeshMatcapMaterial()
+material.matcap = matcapTexture
 
 
 
