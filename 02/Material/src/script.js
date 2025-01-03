@@ -36,6 +36,8 @@ material.map = doorColorTexture
 // material.opacity = 0.5
 material.transparent = true
 material.alphaMap = doorAlphaTexture
+material.side = THREE.DoubleSide
+
 
 
 
