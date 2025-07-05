@@ -1,12 +1,17 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'lil-gui'
+import  typefaceFont from 'three/examples/fonts/helvetiker_regular.typeface.json' 
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
+
 
 /**
  * Base
  */
 // Debug
 const gui = new dat.GUI()
+gui.close()
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -19,15 +24,43 @@ const scene = new THREE.Scene()
  */
 const textureLoader = new THREE.TextureLoader()
 
+const fontsLoader = new FontLoader()
+
+fontsLoader.load(
+    '/fonts/helvetiker_regular.typeface.json',
+    (font) => {
+        // console.log('Font loaded:', font)'
+        const textGeometry = new TextGeometry(
+            'Firaol Anbessa, Hello World!',
+            {
+                font: font,
+                size: 0.5,
+                height: 0.2,
+                curveSegments: 12,
+                bevelEnabled: true,
+                bevelThickness: 0.03,
+                bevelSize: 0.02,
+                bevelOffset: 0,
+                bevelSegments: 5
+            }
+        )
+        const textMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+        textMaterial.wireframe = true
+        const textMesh = new THREE.Mesh(textGeometry, textMaterial)
+        // textMesh.position.set(-1, 0, 0)
+        scene.add(textMesh)
+    }
+)
+
 /**
  * Object
  */
-const cube = new THREE.Mesh(
-    new THREE.BoxGeometry(1, 1, 1),
-    new THREE.MeshBasicMaterial()
-)
+// const cube = new THREE.Mesh(
+//     new THREE.BoxGeometry(1, 1, 1),
+//     new THREE.MeshBasicMaterial()
+// )
 
-scene.add(cube)
+// scene.add(cube)
 
 /**
  * Sizes
