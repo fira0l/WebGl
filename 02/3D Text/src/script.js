@@ -19,10 +19,16 @@ const canvas = document.querySelector('canvas.webgl')
 // Scene
 const scene = new THREE.Scene()
 
+const axesHelper = new THREE.AxesHelper()
+// scene.add(axesHelper)
+
+
 /**
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
+
+const matcapTexture = textureLoader.load('/textures/matcaps/1.png')
 
 const fontsLoader = new FontLoader()
 
@@ -31,21 +37,33 @@ fontsLoader.load(
     (font) => {
         // console.log('Font loaded:', font)'
         const textGeometry = new TextGeometry(
-            'Firaol Anbessa, Hello World!',
+            'Firaol Anbessa, Hello THREE.JS!',
             {
                 font: font,
                 size: 0.5,
                 height: 0.2,
-                curveSegments: 12,
+                curveSegments: 5,
                 bevelEnabled: true,
                 bevelThickness: 0.03,
                 bevelSize: 0.02,
                 bevelOffset: 0,
-                bevelSegments: 5
+                bevelSegments: 4
             }
         )
-        const textMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
-        textMaterial.wireframe = true
+
+        textGeometry.center()
+
+        // textGeometry.computeBoundingBox()
+        // // textGeometry.center() // Center the text geometry
+
+        // textGeometry.translate(
+        //     - (textGeometry.boundingBox.max.x-0.02) * 0.5,
+        //     - (textGeometry.boundingBox.max.y-0.02) * 0.5,
+        //     - (textGeometry.boundingBox.max.z-0.03) * 0.5
+        // )
+
+        const textMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
+        // textMaterial.wireframe = true
         const textMesh = new THREE.Mesh(textGeometry, textMaterial)
         // textMesh.position.set(-1, 0, 0)
         scene.add(textMesh)
