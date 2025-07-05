@@ -26,13 +26,16 @@ gradientTexture.minFilter = THREE.NearestFilter;
 gradientTexture.magFilter = THREE.NearestFilter;
 gradientTexture.generateMipmaps = false;
 
+const label = 4;
+const extension = "png";
+
 const environmentMapTexture = cubeTextureLoader.load([
-  "/textures/environmentMaps/0/px.jpg",
-  "/textures/environmentMaps/0/nx.jpg",
-  "/textures/environmentMaps/0/py.jpg",
-  "/textures/environmentMaps/0/ny.jpg",
-  "/textures/environmentMaps/0/pz.jpg",
-  "/textures/environmentMaps/0/nz.jpg",
+  `/textures/environmentMaps/${label}/px.${extension}`,
+  `/textures/environmentMaps/${label}/nx.${extension}`,
+  `/textures/environmentMaps/${label}/py.${extension}`,
+  `/textures/environmentMaps/${label}/ny.${extension}`,
+  `/textures/environmentMaps/${label}/pz.${extension}`,
+  `/textures/environmentMaps/${label}/nz.${extension}`,
 ]);
 
 /**
