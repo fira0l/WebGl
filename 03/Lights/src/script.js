@@ -27,16 +27,21 @@ scene.add(ambientLight)
 // The color and intensity can be adjusted to achieve the desired effect
 // The position of the light does not matter, only the direction
 
-const directionalLight = new THREE.DirectionalLight(0xffdd00, 0.5)
+const directionalLight = new THREE.DirectionalLight(0xffdd09, 0.5)
 directionalLight.position.set(1,0.25,0)
 scene.add(directionalLight)
 
-const hemisphereLight = new THREE.HemisphereLight(0x00aaff, 0xffaa00, 0.5)
+const hemisphereLight = new THREE.HemisphereLight(0x00ffff, 0xff00cc, 0.5)
 scene.add(hemisphereLight)
+
+const pointLight = new THREE.PointLight(0x2244dd, 0.5)
+pointLight.position.set(1,-0.5, 1)
+scene.add(pointLight)
 
 gui.add(ambientLight, 'intensity').min(0).max(1).step(0.01).name('Ambient Light Intensity')
 gui.add(directionalLight, 'intensity').min(0).max(1).step(0.01).name('Directional Light Intensity')
 gui.add(hemisphereLight, 'intensity').min(0).max(1).step(0.01).name('Hemisphere Light Intensity')
+gui.add(pointLight, 'intensity').min(0).max(1).step(0.01).name('Point Light Intensity')
 
 // const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
 // scene.add(ambientLight)
