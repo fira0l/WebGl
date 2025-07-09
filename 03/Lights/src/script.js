@@ -38,10 +38,20 @@ const pointLight = new THREE.PointLight(0x2244dd, 0.5)
 pointLight.position.set(1,-0.5, 1)
 scene.add(pointLight)
 
+// RectArealLight only works with MeshStandardMaterial and MeshPhysicalMaterial
+// It is useful for simulating light sources like windows or fluorescent lights
+// It has a width and height, and can be positioned in the scene
+// The color and intensity can be adjusted to achieve the desired effect 
+const rectAreaLight = new THREE.RectAreaLight(0x23aa3b, 0.5, 3, 3)
+rectAreaLight.position.set(-1.5, 0, 1.5)
+rectAreaLight.lookAt(new THREE.Vector3(0, 0, 0)) // Look at the origin
+scene.add(rectAreaLight)
+
 gui.add(ambientLight, 'intensity').min(0).max(1).step(0.01).name('Ambient Light Intensity')
 gui.add(directionalLight, 'intensity').min(0).max(1).step(0.01).name('Directional Light Intensity')
 gui.add(hemisphereLight, 'intensity').min(0).max(1).step(0.01).name('Hemisphere Light Intensity')
 gui.add(pointLight, 'intensity').min(0).max(1).step(0.01).name('Point Light Intensity')
+gui.add(rectAreaLight, 'intensity').min(0).max(1).step(0.01).name('Rect Area Light Intensity')
 
 // const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
 // scene.add(ambientLight)
