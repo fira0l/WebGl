@@ -53,6 +53,8 @@ spotLight.position.set(0, 2, 3)
 scene.add(spotLight)
 
 
+
+// Debug
 gui.add(ambientLight, 'intensity').min(0).max(1).step(0.01).name('Ambient Light Intensity')
 gui.add(directionalLight, 'intensity').min(0).max(1).step(0.01).name('Directional Light Intensity')
 gui.add(hemisphereLight, 'intensity').min(0).max(1).step(0.01).name('Hemisphere Light Intensity')
