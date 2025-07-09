@@ -21,10 +21,22 @@ const scene = new THREE.Scene()
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
 scene.add(ambientLight)
 
-const directionalLight = new THREE.DirectionalLight(0xffff00, 0.5)
+//directional light is like a sun light
+// It has a direction but no position, it illuminates all objects in the scene equally
+// It is useful for simulating sunlight or other distant light sources
+// The color and intensity can be adjusted to achieve the desired effect
+// The position of the light does not matter, only the direction
+
+const directionalLight = new THREE.DirectionalLight(0xffdd00, 0.5)
+directionalLight.position.set(1,0.25,0)
 scene.add(directionalLight)
 
+const hemisphereLight = new THREE.HemisphereLight(0x00aaff, 0xffaa00, 0.5)
+scene.add(hemisphereLight)
+
 gui.add(ambientLight, 'intensity').min(0).max(1).step(0.01).name('Ambient Light Intensity')
+gui.add(directionalLight, 'intensity').min(0).max(1).step(0.01).name('Directional Light Intensity')
+gui.add(hemisphereLight, 'intensity').min(0).max(1).step(0.01).name('Hemisphere Light Intensity')
 
 // const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
 // scene.add(ambientLight)
