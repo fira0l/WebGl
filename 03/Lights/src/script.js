@@ -47,11 +47,18 @@ rectAreaLight.position.set(-1.5, 0, 1.5)
 rectAreaLight.lookAt(new THREE.Vector3(0, 0, 0)) // Look at the origin
 scene.add(rectAreaLight)
 
+
+const spotLight = new THREE.SpotLight(0x78ff00, 0.5, 10, Math.PI * 0.1, 0.25, 1)
+spotLight.position.set(0, 2, 3)
+scene.add(spotLight)
+
+
 gui.add(ambientLight, 'intensity').min(0).max(1).step(0.01).name('Ambient Light Intensity')
 gui.add(directionalLight, 'intensity').min(0).max(1).step(0.01).name('Directional Light Intensity')
 gui.add(hemisphereLight, 'intensity').min(0).max(1).step(0.01).name('Hemisphere Light Intensity')
 gui.add(pointLight, 'intensity').min(0).max(1).step(0.01).name('Point Light Intensity')
 gui.add(rectAreaLight, 'intensity').min(0).max(1).step(0.01).name('Rect Area Light Intensity')
+gui.add(spotLight, 'intensity').min(0).max(1).step(0.01).name('Spot Light Intensity')
 
 // const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
 // scene.add(ambientLight)
